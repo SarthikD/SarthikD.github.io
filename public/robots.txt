@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sarthikdobariya.github.io/sitemap.xml
+Sitemap: https://sarthikd.github.io/sitemap.xml

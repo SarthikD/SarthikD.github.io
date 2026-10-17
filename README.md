@@ -26,13 +26,13 @@ Search the project for `[ADD` to find them all.
 
 ## Deploy to GitHub Pages
 
-1. Create a repo named **`SARTHIKDOBARIYA.github.io`** (or `<username>.github.io`). That gives you the root URL `https://sarthikdobariya.github.io/`.
-   Any other repo name also works: it is served at `https://sarthikdobariya.github.io/<repo>/`, and the workflow sets the Vite `base` path automatically.
+1. Create a repo named **`SarthikD.github.io`** (or `<username>.github.io`). That gives you the root URL `https://sarthikd.github.io/`.
+   Any other repo name also works: it is served at `https://sarthikd.github.io/<repo>/`, and the workflow sets the Vite `base` path automatically.
 2. Push this project to the `main` branch:
    ```bash
    git init && git add . && git commit -m "Initial portfolio"
    git branch -M main
-   git remote add origin https://github.com/SARTHIKDOBARIYA/SARTHIKDOBARIYA.github.io.git
+   git remote add origin https://github.com/SarthikD/SarthikD.github.io.git
    git push -u origin main
    ```
 3. In the repo, go to **Settings → Pages → Build and deployment → Source: GitHub Actions**.
