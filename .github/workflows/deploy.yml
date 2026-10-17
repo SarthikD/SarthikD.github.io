@@ -34,7 +34,9 @@ jobs:
       - name: Configure base path
         run: |
           REPO="${GITHUB_REPOSITORY#*/}"
-          if [[ "$REPO" == "sarthikd.github.io" ]]; then
+          # User/org Pages repos ("<name>.github.io") are served from the root.
+          # Compare case-insensitively: GitHub repo names keep their casing.
+          if [[ "${REPO,,}" == *.github.io ]]; then
             echo "BASE_PATH=/" >> "$GITHUB_ENV"
           else
             echo "BASE_PATH=/$REPO/" >> "$GITHUB_ENV"
