@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden bg-ink font-sans text-slate-300 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.3);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid #22d3ee;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Native select options inherit the dark theme */
+  option {
+    background: #12121b;
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .chip {
+    @apply rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 font-mono text-[11px] text-slate-300;
+  }
+
+  .footer-icon {
+    @apply grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-slate-400 transition hover:border-cyan-300/50 hover:text-white hover:shadow-glow;
+  }
+
+  .section-divider {
+    @apply container-x h-px bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+
+  /* Hero: animated grid + cursor spotlight */
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%);
+  }
+
+  .hero-spotlight::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--mx, 70%) var(--my, 30%), rgba(34, 211, 238, 0.08), transparent 45%);
+    transition: background 0.2s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
