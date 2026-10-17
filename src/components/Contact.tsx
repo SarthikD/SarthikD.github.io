@@ -1,5 +1,5 @@
 import { AnimatePresence, m } from 'framer-motion';
-import { AlertCircle, CalendarDays, CheckCircle2, Copy, Loader2, Mail, Send } from 'lucide-react';
+import { AlertCircle, CalendarDays, CheckCircle2, Copy, Loader2, Mail, Phone, Send } from 'lucide-react';
 import { useState, type FormEvent } from 'react';
 import { contact, site, testimonials } from '../data/content';
 import { DevPlaceholder, isPlaceholder, link, Txt } from '../lib/placeholder';
@@ -102,6 +102,16 @@ export function Contact() {
             >
               <Copy size={13} aria-hidden="true" /> {copied ? 'Copied!' : 'Copy email address'}
             </button>
+
+            <a href={`tel:${site.phone.replace(/\s/g, '')}`} className="glass group flex items-center gap-4 p-5 transition hover:border-cyan-300/40 hover:shadow-glow">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-cyan-400/10 text-cyan-300">
+                <Phone size={20} aria-hidden="true" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm text-slate-400">Call me</span>
+                <span className="block truncate font-medium text-white">{site.phone}</span>
+              </span>
+            </a>
 
             {bookCall ? (
               <a

@@ -105,6 +105,7 @@ export const site = {
   remote: 'Available for remote work worldwide',
   timezone: 'IST (UTC+5:30)',
   email: 'sarthikbdobariya12@gmail.com',
+  phone: '+91 9638415459',
   github: 'https://github.com/SarthikD',
   linkedin: 'https://linkedin.com/in/sarthik-dobariya',
   resumeUrl: '[ADD: resume/CV URL, e.g. put resume.pdf in /public and use "resume.pdf"]',

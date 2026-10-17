@@ -1,4 +1,4 @@
-import { ArrowUp, Mail } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from 'lucide-react';
 import { nav, site } from '../data/content';
 import { link } from '../lib/placeholder';
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
@@ -26,6 +26,9 @@ export function Footer() {
             </a>
             <a href={`mailto:${site.email}`} aria-label="Email" className="footer-icon">
               <Mail size={18} aria-hidden="true" />
+            </a>
+            <a href={`tel:${site.phone.replace(/\s/g, '')}`} aria-label="Phone" className="footer-icon">
+              <Phone size={18} aria-hidden="true" />
             </a>
           </div>
         </div>
