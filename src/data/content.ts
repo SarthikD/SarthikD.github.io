@@ -105,7 +105,7 @@ export const site = {
   remote: 'Available for remote work worldwide',
   timezone: 'IST (UTC+5:30)',
   email: 'sarthikbdobariya12@gmail.com',
-  github: 'https://github.com/SARTHIKDOBARIYA',
+  github: 'https://github.com/SarthikD',
   linkedin: 'https://linkedin.com/in/sarthik-dobariya',
   resumeUrl: '[ADD: resume/CV URL, e.g. put resume.pdf in /public and use "resume.pdf"]',
   bookCallUrl: '[ADD: Calendly / Cal.com booking link]',
@@ -377,6 +377,23 @@ export const projects: Project[] = [
 /* ───────────────────────────── Experience ───────────────────────────── */
 
 export const experience: Role[] = [
+  {
+    title: 'Software Developer',
+    company: 'YoHOsys',
+    period: 'Sep 2026 – Present',
+    start: '2026-09',
+    end: 'Present',
+    bullets: [
+      'Develop and maintain scalable backend APIs using Node.js, NestJS, Prisma, and PostgreSQL for the Haven platform.',
+      'Implement backend features for user management, Haven Circles, incident tracking, evidence management, and data export.',
+      'Develop Flutter applications and integrate REST APIs, authentication flows, and backend services.',
+      'Implement real-time communication using WebSockets and Socket.IO for live messaging and event-driven features.',
+      'Integrate Firebase Phone Authentication for OTP verification and coordinate authentication flows between Flutter and backend APIs.',
+      'Manage database schemas, relationships, queries, and pagination using Prisma ORM and PostgreSQL.',
+      'Work with Docker and AWS deployment environments to support application configuration and deployment troubleshooting.',
+      'Follow Clean Architecture principles to build maintainable, reusable, and scalable application components.'
+    ],
+  },
   {
     title: 'Software Developer',
     company: 'MatlabInfotech',
