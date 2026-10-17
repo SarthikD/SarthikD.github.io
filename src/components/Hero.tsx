@@ -9,15 +9,17 @@ import { MagneticButton } from './MagneticButton';
 import { Terminal } from './Terminal';
 
 // Real, derived facts only.
+const now = new Date();
+const thisMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
 const firstStart = experience.map((r) => r.start).sort()[0];
-const lastEnd = experience.map((r) => r.end).sort().reverse()[0];
+const lastEnd = experience.map((r) => (r.end === 'Present' ? thisMonth : r.end)).sort().reverse()[0];
 const monthsExp = (() => {
   const [y1, m1] = firstStart.split('-').map(Number);
   const [y2, m2] = lastEnd.split('-').map(Number);
   return (y2 - y1) * 12 + (m2 - m1);
 })();
 const stats = [
-  { value: Math.floor(monthsExp / 12), suffix: '+', label: 'years professional experience' },
+  { value: Math.floor((monthsExp / 12) * 10) / 10, decimals: 1, suffix: '+', label: 'years professional experience' },
   { value: projects.filter((p) => !p.placeholder).length, suffix: '', label: 'featured projects' },
   { value: coreSkills.length + skillGroups.reduce((n, g) => n + g.items.length, 0), suffix: '', label: 'technologies & tools' },
 ];
@@ -156,18 +158,30 @@ function Stats() {
   );
 }
 
-function Stat({ value, suffix, label, start }: { value: number; suffix: string; label: string; start: boolean }) {
-  const n = useCountUp(value, start);
+function Stat({
+  value,
+  decimals = 0,
+  suffix,
+  label,
+  start,
+}: {
+  value: number;
+  decimals?: number;
+  suffix: string;
+  label: string;
+  start: boolean;
+}) {
+  const n = useCountUp(value, start, undefined, decimals);
   return (
     <div>
       <dt className="sr-only">{label}</dt>
       <dd className="font-display text-2xl font-semibold text-white sm:text-3xl">
         <span aria-hidden="true">
-          {n}
+          {n.toFixed(decimals)}
           {suffix}
         </span>
         <span className="sr-only">
-          {value}
+          {value.toFixed(decimals)}
           {suffix}
         </span>
       </dd>

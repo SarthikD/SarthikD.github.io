@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 
-/** Counts from 0 to `target` once `start` becomes true. */
-export function useCountUp(target: number, start: boolean, durationMs = 1400) {
+/** Counts from 0 to `target` once `start` becomes true, rounded to `decimals` places. */
+export function useCountUp(target: number, start: boolean, durationMs = 1400, decimals = 0) {
   const reduce = useReducedMotion();
   const [value, setValue] = useState(0);
 
@@ -17,12 +17,13 @@ export function useCountUp(target: number, start: boolean, durationMs = 1400) {
     const tick = (now: number) => {
       const p = Math.min(1, (now - t0) / durationMs);
       const eased = 1 - Math.pow(1 - p, 3);
-      setValue(Math.round(target * eased));
+      const factor = 10 ** decimals;
+      setValue(Math.round(target * eased * factor) / factor);
       if (p < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [target, start, durationMs, reduce]);
+  }, [target, start, durationMs, decimals, reduce]);
 
   return value;
 }
