@@ -213,11 +213,11 @@ export const services: Service[] = [
 /* ───────────────────────────── Skills ───────────────────────────── */
 
 export const coreSkills: CoreSkill[] = [
-  { name: 'Node.js', icon: Server, use: 'Production APIs, workers & job queues', usedIn: ['Winchurch', 'Crickedge'] },
+  { name: 'Node.js', icon: Server, use: 'Production APIs, workers & job queues', usedIn: ['Winchurch services', 'Crickedge'] },
   { name: 'NestJS', icon: Boxes, use: 'Structured, modular TypeScript backends', usedIn: [] },
   { name: 'Flutter (Dart)', icon: Smartphone, use: 'Cross-platform Android & iOS apps', usedIn: [] },
   { name: 'PostgreSQL', icon: Database, use: 'Relational data modelling & queries', usedIn: [] },
-  { name: 'Prisma', icon: Layers, use: 'Type-safe ORM, schema & migrations', usedIn: ['Winchurch'] },
+  { name: 'Prisma', icon: Layers, use: 'Type-safe ORM, schema & migrations', usedIn: ['Winchurch services'] },
   { name: 'Firebase', icon: Flame, use: 'Auth, Realtime Database & app backends', usedIn: ['Android messaging app'] },
   { name: 'WebSockets', icon: Radio, use: 'Live, bi-directional client updates', usedIn: [] },
 ];
@@ -257,8 +257,8 @@ export const projects: Project[] = [
     repoUrl: '[ADD: GitHub repo URL for Storybook AI (or leave as-is to hide)]',
   },
   {
-    id: 'winchurch',
-    title: 'Winchurch',
+    id: 'Winchurch services',
+    title: 'Winchurch services',
     tagline: 'Email management platform with claim workflows',
     categories: ['Backend'],
     tech: ['Node.js', 'Express', 'Prisma', 'Azure Email Service'],
